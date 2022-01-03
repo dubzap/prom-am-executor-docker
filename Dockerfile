@@ -8,5 +8,6 @@ RUN go build
 FROM alpine:3.15.0
 WORKDIR /srv
 COPY --from=builder /srv/prometheus-am-executor .
+RUN ln -s /srv/prometeus-am-executor /usr/bin/
 CMD ["/srv/prometheus-am-executor"]
 EXPOSE 8080
